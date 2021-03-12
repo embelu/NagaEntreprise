@@ -10,7 +10,7 @@ namespace Entreprise.console
     {
         static void Main(string[] args)
         {
-            Societe societe = new Societe();
+            Societe societe = Societe.CreerSociete();
 
             societe.Nom = "Solidaris";
             societe.Matricule = 123456;
