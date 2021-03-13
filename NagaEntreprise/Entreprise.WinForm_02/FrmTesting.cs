@@ -32,7 +32,6 @@ namespace Entreprise.WinForm_02
             _societe.AddTravailleur(6, "Fontana", "Pierre", 40, 1500);
             _societe.AddTravailleur(7, "Vanbelle", "Laurent", 15, 700);
 
-
             MessageBox.Show("Contenu de la liste :");
             foreach (var item in _societe.travailleurs)
             {

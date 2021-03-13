@@ -53,15 +53,14 @@ namespace Entreprise
 
 
         // Surcharger les opérateurs pour permettre la comparaison via == et !=
-        public static bool operator !=(Travailleur t1, Travailleur t2)
+        public static bool operator != (Travailleur t1, Travailleur t2)
         {
             return t1.Equals(t2);
         }
-        public static bool operator ==(Travailleur t1, Travailleur t2)
+        public static bool operator == (Travailleur t1, Travailleur t2)
         {
             return t1.Equals(t2);
         }
-
 
         public bool Equals(Travailleur travailleur)
         {
