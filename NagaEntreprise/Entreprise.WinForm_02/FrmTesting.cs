@@ -21,12 +21,14 @@ namespace Entreprise.WinForm_02
 
         private void BtnTest_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("*** Ajout de 5 éléments dans la list Travailleur ***");
-            _societe.AddTravailleur(1, "Baens", "Ludovic", 30, 500);
-            _societe.AddTravailleur(2, "Masset", "Frédéric", 25, 1200);
-            _societe.AddTravailleur(3, "Nadin", "Pascal", 35, 1300);
-            _societe.AddTravailleur(4, "Fontana", "Pierre", 40, 1500);
-            _societe.AddTravailleur(5, "Vanbelle", "Laurent", 15, 700);
+            MessageBox.Show("*** Ajout de 7 éléments dans la list Travailleur ***");
+            _societe.AddTravailleur(1, "Billen", "Nathalie", 30, 500);
+            _societe.AddTravailleur(2, "Baens", "Ludovic", 30, 500);
+            _societe.AddTravailleur(3, "Aerts", "Christian", 30, 500);
+            _societe.AddTravailleur(4, "Masset", "Frédéric", 25, 1200);
+            _societe.AddTravailleur(5, "Nadin", "Pascal", 35, 1300);
+            _societe.AddTravailleur(6, "Fontana", "Pierre", 40, 1500);
+            _societe.AddTravailleur(7, "Vanbelle", "Laurent", 15, 700);
 
 
             MessageBox.Show("Contenu de la liste :");
@@ -38,7 +40,7 @@ namespace Entreprise.WinForm_02
 
 
             MessageBox.Show("Tri via class TravailleurComparator (Age Desc) : ");
-            Entreprise.Comparator.TravailleurComparator.SortByDesc myComp = new Entreprise.Comparator.TravailleurComparator.SortByDesc();
+            Entreprise.Comparator.TravailleurComparator.SortByAgeDesc myComp = new Entreprise.Comparator.TravailleurComparator.SortByAgeDesc();
             _societe.travailleurs.Sort(myComp);
 
             foreach (var item in _societe.travailleurs)
@@ -46,7 +48,14 @@ namespace Entreprise.WinForm_02
                 MessageBox.Show(item.Id + " " + item.Nom + " " + item.Prenom + " " + item.Age + " " + item.Salaire());
             }
 
+            MessageBox.Show("Tri via class TravailleurComparator (Age et Name Desc) : ");
+            Entreprise.Comparator.TravailleurComparator.SortByAgeAndNameDesc myCompA = new Entreprise.Comparator.TravailleurComparator.SortByAgeAndNameDesc();
+            _societe.travailleurs.Sort(myCompA);
 
+            foreach (var item in _societe.travailleurs)
+            {
+                MessageBox.Show(item.Id + " " + item.Nom + " " + item.Prenom + " " + item.Age + " " + item.Salaire());
+            }
 
 
         }

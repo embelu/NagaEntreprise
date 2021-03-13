@@ -6,7 +6,7 @@ namespace Entreprise.Comparator
 {
     public class TravailleurComparator
     {
-        public class SortByAsc : IComparer<Travailleur>
+        public class SortByAgeAsc : IComparer<Travailleur>
         {
             public int Compare(Travailleur x, Travailleur y)
             {
@@ -24,7 +24,7 @@ namespace Entreprise.Comparator
             }
         }
 
-        public class SortByDesc : IComparer<Travailleur>
+        public class SortByAgeDesc : IComparer<Travailleur>
         {
             public int Compare(Travailleur x, Travailleur y)
             {
@@ -41,5 +41,62 @@ namespace Entreprise.Comparator
                 return 0;
             }
         }
+
+
+        public class SortByAgeAndNameAsc : IComparer<Travailleur>
+        {
+            public int Compare(Travailleur x, Travailleur y)
+            {
+                int result = 0;
+
+
+                if (x.Age > y.Age)
+                {
+                    result = 1;
+                }
+
+                if (x.Age < y.Age)
+                {
+                    result = -1;
+                }
+
+                if (result == 0)
+                {
+                    result = x.Nom.CompareTo(y.Nom);
+                }
+
+                return result;
+            }
+        }
+
+        public class SortByAgeAndNameDesc : IComparer<Travailleur>
+        {
+            public int Compare(Travailleur x, Travailleur y)
+            {
+                int result = 0;
+
+                if (x.Age < y.Age)
+                {
+                    result = 1;
+                }
+
+                if (x.Age > y.Age)
+                {
+                    result = -1;
+                }
+
+                if (result == 0)
+                {
+                    result = x.Nom.CompareTo(y.Nom);
+                    result = result * -1; 
+                }
+
+                return result;
+            }
+        }
+
+
+
+
     }
 }
