@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entreprise
 {
-    public abstract class Travailleur : ITravailleur
+    public abstract class Travailleur : ITravailleur , IComparable
     {
         public int Id { get; set; }
         public string Nom { get; set; }
@@ -23,5 +23,13 @@ namespace Entreprise
 
         // Méthode abstract qui devra être implémentée dans les classes qui héritent de Travailleur
         public abstract int Salaire();
+
+
+        public int CompareTo(object obj)
+        {
+            Travailleur travailleurTemp = obj as Travailleur;
+
+            return string.Compare(this.Prenom, travailleurTemp.Prenom);
+        }
     }
 }
