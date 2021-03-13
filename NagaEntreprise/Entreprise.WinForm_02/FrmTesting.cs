@@ -89,6 +89,16 @@ namespace Entreprise.WinForm_02
 
 
 
+            MessageBox.Show("Comparaison d'objet via Surcharge des Opérateurs == et != ");
+            // Impose d'overrider la méthode Equals pour expliquer sur quelles zones comparer.
+            if (_societe.travailleurs[0] == (_societe.travailleurs[1]))
+            {
+                MessageBox.Show("Message ==");
+            }
+            else
+            {
+                MessageBox.Show("Message !=");
+            }
 
         }
     }
