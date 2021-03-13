@@ -32,7 +32,6 @@ namespace Entreprise.WinForm_02
             _societe.AddTravailleur(6, "Fontana", "Pierre", 40, 1500);
             _societe.AddTravailleur(7, "Vanbelle", "Laurent", 15, 700);
 
-
             MessageBox.Show("Contenu de la liste :");
             foreach (var item in _societe.travailleurs)
             {
@@ -89,6 +88,16 @@ namespace Entreprise.WinForm_02
 
 
 
+            MessageBox.Show("Comparaison d'objet via Surcharge des Opérateurs == et != ");
+            // Impose d'overrider la méthode Equals pour expliquer sur quelles zones comparer.
+            if (_societe.travailleurs[0] == (_societe.travailleurs[1]))
+            {
+                MessageBox.Show("Message ==");
+            }
+            else
+            {
+                MessageBox.Show("Message !=");
+            }
 
         }
     }
