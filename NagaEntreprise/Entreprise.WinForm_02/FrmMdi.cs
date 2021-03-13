@@ -47,5 +47,13 @@ namespace Entreprise.WinForm_02
             frmList.MdiParent = this;
             frmList.Show();
         }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTesting frmList = new FrmTesting();
+            frmList.WindowState = FormWindowState.Maximized;
+            frmList.MdiParent = this;
+            frmList.Show();
+        }
     }
 }
