@@ -24,6 +24,7 @@ namespace Entreprise.WinForm_02
         {
             MessageBox.Show("*** Ajout de 7 éléments dans la list Travailleur ***");
             _societe.AddTravailleur(1, "Billen", "Nathalie", 30, 500);
+            _societe.AddTravailleur(2, "Billen", "Nathalie", 30, 500);
             _societe.AddTravailleur(2, "Baens", "Ludovic", 30, 500);
             _societe.AddTravailleur(3, "Aerts", "Christian", 30, 500);
             _societe.AddTravailleur(4, "Masset", "Frédéric", 25, 1200);
@@ -70,6 +71,22 @@ namespace Entreprise.WinForm_02
             {
                 MessageBox.Show(item.Id + " " + item.Nom + " " + item.Prenom + " " + item.Age + " " + item.Salaire());
             }
+
+
+
+
+
+            MessageBox.Show("Comparaison d'objet via Override Equals ");
+            // Impose d'overrider la méthode Equals pour expliquer sur quelles zones comparer.
+            if (_societe.travailleurs[0].Equals(_societe.travailleurs[1]))
+            {
+                MessageBox.Show("Message ==");
+            }
+            else
+            {
+                MessageBox.Show("Message !=");
+            }
+
 
 
 
