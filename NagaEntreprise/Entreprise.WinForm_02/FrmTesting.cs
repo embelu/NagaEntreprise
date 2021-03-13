@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entreprise.Comparator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,7 +41,7 @@ namespace Entreprise.WinForm_02
 
 
             MessageBox.Show("Tri via class TravailleurComparator (Age Desc) : ");
-            Entreprise.Comparator.TravailleurComparator.SortByAgeDesc myComp = new Entreprise.Comparator.TravailleurComparator.SortByAgeDesc();
+            TravailleurComparator.SortByAgeDesc myComp = new TravailleurComparator.SortByAgeDesc();
             _societe.travailleurs.Sort(myComp);
 
             foreach (var item in _societe.travailleurs)
@@ -49,7 +50,7 @@ namespace Entreprise.WinForm_02
             }
 
             MessageBox.Show("Tri via class TravailleurComparator (Age et Name Desc) : ");
-            Entreprise.Comparator.TravailleurComparator.SortByAgeAndNameDesc myCompA = new Entreprise.Comparator.TravailleurComparator.SortByAgeAndNameDesc();
+            TravailleurComparator.SortByAgeAndNameDesc myCompA = new TravailleurComparator.SortByAgeAndNameDesc();
             _societe.travailleurs.Sort(myCompA);
 
             foreach (var item in _societe.travailleurs)
